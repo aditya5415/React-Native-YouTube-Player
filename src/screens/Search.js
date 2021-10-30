@@ -6,9 +6,6 @@ import Constant from 'expo-constants'
 import { useSelector, useDispatch } from 'react-redux';
 
 
-// https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=songs&type=video&key=AIzaSyB63y3-VPX8PfB67BRUyMrczpSRAulbjbE
-
-// AIzaSyB63y3-VPX8PfB67BRUyMrczpSRAulbjbE
 
 const SearchScreen = ({ navigation }) => {
     const [value, setValue] = useState("")
@@ -20,7 +17,7 @@ const SearchScreen = ({ navigation }) => {
 
     const fetchData = () => {
         setLoading(true)
-        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&q=${value}&type=video&key=AIzaSyB63y3-VPX8PfB67BRUyMrczpSRAulbjbE`)
+        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&q=${value}&type=video&key=YOURAPIKEY`)
             .then(res => res.json())
             .then(data => {
                 setLoading(false)
